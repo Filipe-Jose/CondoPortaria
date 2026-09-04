@@ -7,6 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--font-cor);
 }   
 
 .bg {
@@ -47,7 +48,9 @@ body {
     align-items: center;
     justify-content: center;
     gap: 2px;
-    transition: 0.2s ease;
+    transition: letter-spacing 0.2s ease,
+                outline 0.2s ease;
+    color: var(--font-cor);
 }
 
 .toggleTheme button:hover, .toggleTheme button:focus {
@@ -57,4 +60,5 @@ body {
 
 .toggleTheme svg {
     height: 18px;
+    color: var(--font-cor);
 }
