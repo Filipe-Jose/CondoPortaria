@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="/styles/global.css" type="text/css" rel="stylesheet">
+    <link href="/styles/form.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div class="bg">
+        <div class="blob" id="blob1"></div>
+        <div class="blob" id="blob2"></div>
+    </div>
+    <div class="toggleTheme">
+        <button id="toggleTheme">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+            Modo escuro
+        </button>
+    </div>
+    <div class="card">
+        <h2>CondoPortaria</h2><hr>
+        <p>Entre com sua conta no Sistema de Gestão de Condomínio</p>
+        <form>
+            <label>
+                <span id="campo-txt">E-mail:</span>
+                <input type="text" id="email">
+            </label>
+            <label>
+                <span id="campo-txt">Senha:</span>
+                <input type="password" id="senha">
+                <button type="button" id="togglePassword">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                </button>
+            </label>
+            <button type="submit" class="btn-submit">Entrar</button>
+        </form>
+    </div>
+
+    <script src="js/global.js"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>

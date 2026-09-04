@@ -1,0 +1,15 @@
+:root {
+    --blob-cor: #1477e7;
+    --bg-gradient: linear-gradient(gainsboro, white, gainsboro);
+    --border: black;
+    --high-transparent: rgba(245, 245, 245, 0.6);
+    --low-transparent: rgba(245, 245, 245, 0.9);
+}
+
+[data-theme="dark"] {
+    --blob-cor: red;
+    --bg-gradient: linear-gradient(black, rgb(35, 35, 35), black);
+    --border: black;
+    --high-transparent: rgba(245, 245, 245, 0.6);
+    --low-transparent: rgba(245, 245, 245, 0.9);
+}
