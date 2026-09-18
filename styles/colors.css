@@ -7,7 +7,7 @@
 }
 
 [data-theme="dark"] {
-    --blob-cor: red;
+    --blob-cor: darkblue;
     --bg-gradient: linear-gradient(black, rgb(35, 35, 35), black);
     --border: black;
     --high-transparent: rgba(245, 245, 245, 0.6);
