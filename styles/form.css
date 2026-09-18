@@ -28,7 +28,7 @@ form label {
 form label span {
     margin-left: 20px;
     margin-right: auto;
-    gap: 40px;
+    margin-bottom: 2px;
 }
 
 form label input {
@@ -39,7 +39,9 @@ form label input {
     border: 0;
     border-bottom: 1px solid var(--border);
     background-color: transparent;
-    transition: 0.5s ease;
+    transition: .1s ease;
+    color: var(--font-cor);
+    font-size: .95rem;
 }
 
 input:focus {
@@ -50,7 +52,7 @@ input:focus {
 #togglePassword {
     position: absolute;
     margin-left: 370px;
-    margin-top: 18px;
+    margin-top: 20px;
     border: none;
     background-color: transparent;
 }
@@ -58,6 +60,7 @@ input:focus {
 form label button svg {
     width: 24px;
     margin: auto;
+    color: var(--font-cor);
 }
 
 .btn-submit {
@@ -67,7 +70,9 @@ form label button svg {
     border-radius: 6px;
     width:60px;
     padding: 4px;
-    transition: 0.2s ease;
+    transition: letter-spacing 0.2s ease,
+                outline 0.2s ease;
+    color: var(--font-cor);
 }
 
 .btn-submit:hover, .btn-submit button:focus {

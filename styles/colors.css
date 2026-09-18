@@ -2,6 +2,7 @@
     --blob-cor: #1477e7;
     --bg-gradient: linear-gradient(gainsboro, white, gainsboro);
     --border: black;
+    --font-cor: black;
     --high-transparent: rgba(245, 245, 245, 0.6);
     --low-transparent: rgba(245, 245, 245, 0.9);
 }
@@ -9,7 +10,8 @@
 [data-theme="dark"] {
     --blob-cor: darkblue;
     --bg-gradient: linear-gradient(black, rgb(35, 35, 35), black);
-    --border: black;
-    --high-transparent: rgba(245, 245, 245, 0.6);
-    --low-transparent: rgba(245, 245, 245, 0.9);
+    --border: white;
+    --font-cor: white;
+    --high-transparent: rgba(20, 20, 20, 0.3);
+    --low-transparent: rgba(20, 20, 20, 0.5);
 }
