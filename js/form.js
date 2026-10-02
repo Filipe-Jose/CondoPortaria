@@ -1,3 +1,8 @@
+const API_URL = "https://condoportariaservidor.onrender.com";
+
+const formEntrar = document.getElementById("entrar");
+const formCadastrar = document.getElementById("cadastrar");
+
 const btnTogglePassword = document.getElementById("togglePassword");
 const inputPassword = document.getElementById("senha");
 
@@ -13,3 +18,84 @@ btnTogglePassword.addEventListener("click", () => {
         btnTogglePassword.innerHTML = olhoAberto;
     }
 });
+
+
+async function api(endpoint, method = "GET", body = null) {
+    const options = {
+        method: method,
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+
+    if (body !== null) {
+        options.body = JSON.stringify(body);
+    }
+
+    const resposta = await fetch(`${API_URL}${endpoint}`, options);
+
+    if (!resposta.ok) {
+        throw new Error(`Erro HTTP: ${resposta.status}`);
+    }
+
+    if (resposta.status === 204) {
+        return null;
+    }
+
+    return await resposta.json();
+}
+
+
+if (formCadastrar) {
+    formCadastrar.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const senha = document.getElementById("senha").value;
+
+        const usuario = {
+            nome,
+            email,
+            senha
+        };
+
+        try {
+            const dados = await api("/usuarios", "POST", usuario);
+
+            console.log("Usuário cadastrado:", dados);
+            alert("Usuário cadastrado com sucesso!");
+
+        } catch (erro) {
+            console.error("Erro ao cadastrar:", erro);
+            alert("Erro ao cadastrar usuário.");
+        }
+    });
+}
+
+if (formEntrar) {
+    formEntrar.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const senha = document.getElementById("senha").value;
+
+        try {
+            const usuarios = await api("/usuarios");
+
+            const usuarioEncontrado = usuarios.find(usuario =>
+                usuario.email === email &&
+                usuario.senha === senha
+            );
+
+            if (usuarioEncontrado) {
+                alert("Entrou com sucesso!");
+            } else {
+                console.error("As informações estão incorretas ou o usuário não existe.");
+            }
+
+        } catch (erro) {
+            console.error("Erro ao verificar usuário:", erro);
+        }
+    });
+}
